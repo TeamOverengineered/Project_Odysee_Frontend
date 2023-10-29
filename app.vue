@@ -1,5 +1,12 @@
 <template>
-  <div>
-    <NuxtWelcome />
-  </div>
+    <NuxtLayout>
+      <NuxtPage />
+    </NuxtLayout>
 </template>
+
+<script setup>
+useHead({
+    htmlAttrs: [{'data-theme': 'pastel'}],
+    meta: [{name: "foo"}]
+  });
+</script>
