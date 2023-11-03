@@ -2,7 +2,7 @@
     <div class="grid grid-cols-3 h-screen">
         <div class="col-span-1 bg-base-300 px-8">
             <h1 class="mt-14 text-4xl text-center text-primary-content font-medium">Project Odyssee</h1>
-            <img class="p-9 h-1/2" src="~/assets/images/dashboard.png" alt="">
+            <img class="p-9 h-1/2" src="/images/dashboard.png" alt="">
             <h2 class="text-center text-2xl font-semibold">
                 Dérrière ipsum dolor sit amet, <br>
                 consectetur adipiscing elit.
@@ -17,7 +17,7 @@
         </div>
         <div class="col-span-2">
             <div class="w-full">
-                <img class="w-64 self-center mx-auto mt-12" src="~/assets/images/logo.png" alt="">
+                <img class="w-64 self-center mx-auto mt-12" src="/images/logo.png" alt="">
             </div>
             <h2 class="text-4xl text-center mt-32">Einloggen</h2>
             <p class="text-3xl text-center mt-6">Geben Sie Ihre E-Mail und Ihr Passwort ein</p>
