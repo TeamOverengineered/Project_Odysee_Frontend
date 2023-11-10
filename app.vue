@@ -1,7 +1,7 @@
 <template>
     <div class="flex flex-col h-screen w-screen">
       <NuxtLayout>
-        <NuxtPage class="flex-auto overflow-y-scroll"/>
+        <NuxtPage />
       </NuxtLayout>
     </div>
 </template>
@@ -9,7 +9,7 @@
 <script setup>
 useHead({
     htmlAttrs: [
-      {'data-theme': 'pastel'},
+      {'data-theme': 'winter'},
       ],
     meta: [{name: "foo"}]
   });

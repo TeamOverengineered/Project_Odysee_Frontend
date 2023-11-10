@@ -8,7 +8,15 @@ export default {
   daisyui: {
     themes: [
       "dark",
-      "pastel"
+      "pastel",
+      "wireframe",
+      "winter",
+      "lofi",
+      "corporate",
+      "cyberpunk",
+      "retro",
+      "synthwave",
+      "forest"
     ]
   }
 }

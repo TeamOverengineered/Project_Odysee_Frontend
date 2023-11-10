@@ -1,7 +1,7 @@
 <template>
     <div class="grid grid-cols-3 h-screen">
         <div class="col-span-1 bg-base-300 px-8">
-            <h1 class="mt-14 text-4xl text-center text-primary-content font-medium">Project Odyssee</h1>
+            <h1 class="mt-14 text-4xl text-center font-medium">Project Odyssee</h1>
             <img class="p-9 h-1/2" src="/images/dashboard.png" alt="">
             <h2 class="text-center text-2xl font-semibold">
                 Dérrière ipsum dolor sit amet, <br>
@@ -26,13 +26,13 @@
                     <label class="label">
                         <span class="label-text font-bold text-lg">E-Mail</span>
                     </label>
-                    <input type="text" class="input input-bordered w-full rounded-sm" />
+                    <input type="email" class="input input-bordered w-full rounded-sm" required />
                 </div>
                 <div class="form-control w-full">
                     <label class="label">
                         <span class="label-text font-bold text-lg">Passwort</span>
                     </label>
-                    <input type="text" class="input input-bordered w-full rounded-sm" />
+                    <input type="text" class="input input-bordered w-full rounded-sm" required/>
                 </div>
                 <button class="btn btn-active w-full mt-4 rounded-sm" type="submit">Einloggen</button>
                 <div class="flex justify-between mt-2">

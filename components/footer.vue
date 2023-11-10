@@ -1,5 +1,5 @@
 <template>
-    <div class="w-full bg-base-300 h-20 flex justify-between px-4 items-center">
+    <div class="w-full bg-base-300 h-20 flex justify-between px-16 items-center">
         <div>© TeamOverengineered</div>
         <a href="/impressum">Impressum</a>
         <a href="/datenschutz">Datenschutz</a>
