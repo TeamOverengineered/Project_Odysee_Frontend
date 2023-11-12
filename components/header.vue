@@ -13,6 +13,7 @@
         </div>
     </div>
 </template>
+
 <script>
 export default {
     data() {
@@ -31,7 +32,10 @@ export default {
          */
         toggleMenu(data) {
             this[data] = !this[data]
-        }
+        },
+        handleModalBlur() {
+            console.log("handleModalBlur")
+  }
     }
 }
 </script>

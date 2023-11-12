@@ -1,26 +1,32 @@
 <template>
-    <div class="absolute right-20 top-20 mt-2 w-80 bg-base-200 border border-gray-400 rounded shadow-lg">
-      <ul class="py-2">
-        <li class="block py-2 text-neutral">
-            <a href="#" >{{ notifications }} neue Nachrichten</a>
+  <div class="absolute right-20 top-20 mt-2 w-80 bg-base-200 border border-gray-400 rounded shadow-lg">
+    <ul class="">
+      <nuxt-link to="/">
+        <li class="px-4 py-2 text-neutral hover:text-base-content hover:bg-base-300">
+          {{ notifications }} neue Nachrichten
         </li>
-        <li class="block py-2 text-neutral ">
-            <a href="#" >Neue Buchung</a>
+      </nuxt-link>
+      <nuxt-link to="/">
+        <li class="px-4 py-2 text-neutral hover:text-base-content hover:bg-base-300">
+          Neue Buchung
         </li>
-        <li class="block py-2 text-neutral">
-            <a href="#" >Platz Frei</a>
+      </nuxt-link>
+      <nuxt-link to="/">
+        <li class="px-4 py-2 text-neutral hover:text-base-content hover:bg-base-300">
+          Platz Frei
         </li>
-      </ul>
-    </div>
+      </nuxt-link>
+    </ul>
+  </div>
 </template>
 
 <script>
 export default {
-    data() {
-        return {
-            visible: false
-        }
-    },
+  data() {
+    return {
+      visible: false
+    }
+  },
   props: {
     isMenuOpen: {
       type: Boolean,
@@ -36,11 +42,11 @@ export default {
   },
   methods: {
     handleClickOutside(event) {
-        const componentElement = this.$el;
-        if (!componentElement.contains(event.target) && this.visible) {
-            this.$emit("closeMenu");
-        }
-        this.visible = true
+      const componentElement = this.$el;
+      if (!componentElement.contains(event.target) && this.visible) {
+        this.$emit("closeMenu");
+      }
+      this.visible = true
     }
   }
 };
