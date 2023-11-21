@@ -9,7 +9,7 @@
 <script setup>
 useHead({
     htmlAttrs: [
-      {'data-theme': 'winter'},
+      {'data-theme': 'light'},
       ],
     meta: [{name: "foo"}]
   });

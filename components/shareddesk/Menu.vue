@@ -1,0 +1,53 @@
+<template>
+    <div class="h-full w-64 bg-base-200 flex flex-col">
+        <div class="mx-2">
+            <ul class="items-center">
+                <nuxt-link to="/shareddesk">
+                <li class="flex items-center text-xl border-t-0 h-12">
+                    <img src="/images/arrow-left.png" alt="shareddesk" class="mr-2">Zurück zur Übersicht
+                </li>
+                </nuxt-link>
+                <li>
+                    <img src="/images/offices/aachen2.jpg" alt="" class="rounded-xl w-60 mx-auto mt-4">
+                </li>
+            </ul>
+            <p class="text-2xl">HQ Aachen</p>
+            <p>Gartenstraße 60, 52064 Aachen</p>
+        </div>
+        <hr class="border-base-300 mt-2">
+        <div class="mx-auto mt-4">
+            <button @click="toggleMenu('buildingMenu')" :class="buildingMenu ? 'bg-primary-content' : ''" class="rounded-full border mr-4 p-1 bg-base-300 hover:bg-primary-content">
+                Gebäudeplan
+            </button>
+            <button @click="toggleMenu('infoMenu')" :class="infoMenu ? 'bg-primary-content' : ''" class="rounded-full border p-1 bg-base-300 hover:bg-primary-content">
+                Informationen
+            </button>
+        </div>
+        <ShareddeskInformation v-if="infoMenu"  class="mx-2 mt-4"/>
+        <ShareddeskBuildingPlan v-if="buildingMenu" class="mx-2 mt-4"/>
+    </div>
+</template>
+
+<script>
+export default {
+    data() {
+        return {
+            infoMenu: false,
+            buildingMenu: false
+        }
+    },
+    methods: {
+        toggleMenu(menu) {
+            switch (menu) {
+                case 'buildingMenu':
+                    this.infoMenu = false
+                    this.buildingMenu = !this.buildingMenu
+                    break
+                case 'infoMenu':
+                    this.buildingMenu = false
+                    this.infoMenu = !this.infoMenu
+            }
+        }
+    }
+}
+</script>

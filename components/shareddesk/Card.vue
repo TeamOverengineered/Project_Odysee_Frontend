@@ -7,7 +7,7 @@
         <div class="card-body h-48">
             <h2 class="card-title">{{ title }}</h2>
             <p>{{ description }}</p>
-            <nuxt-link :to="url" class="self-end"><img src="/images/arrow.png" alt=""></nuxt-link>
+            <nuxt-link :to="url" class="self-end"><img src="/images/arrow-right.png" alt=""></nuxt-link>
         </div>
     </div>
 </template>

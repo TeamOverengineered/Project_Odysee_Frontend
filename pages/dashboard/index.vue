@@ -37,6 +37,7 @@ export default {
                 { id: "2", subject: "Meld dich du Spast", email: "erzfeind@gmx.de", supporterId: "12345" },
                 { id: "3", subject: "Meld dich du Spast", email: "erzfeind@gmx.de", supporterId: "12345" },
                 { id: "4", subject: "Meld dich du Spast", email: "erzfeind@gmx.de", supporterId: "12345" },
+                { id: "4", subject: "Meld dich du Spast", email: "erzfeind@gmx.de", supporterId: "12345" },
             ]
         };
     }

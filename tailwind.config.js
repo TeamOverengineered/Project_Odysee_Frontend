@@ -16,7 +16,9 @@ export default {
       "cyberpunk",
       "retro",
       "synthwave",
-      "forest"
+      "forest",
+      'nord',
+      'light'
     ]
   }
 }
