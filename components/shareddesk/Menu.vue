@@ -8,11 +8,11 @@
                 </li>
                 </nuxt-link>
                 <li>
-                    <img src="/images/offices/aachen2.jpg" alt="" class="rounded-xl w-60 mx-auto mt-4">
+                    <img :src="officeImagePath" alt="" class="rounded-xl w-60 mx-auto mt-4">
                 </li>
             </ul>
-            <p class="text-2xl">HQ Aachen</p>
-            <p>Gartenstraße 60, 52064 Aachen</p>
+            <p class="text-2xl">{{ officeName }}</p>
+            <p>{{ officeAddress }}</p>
         </div>
         <hr class="border-base-300 mt-2">
         <div class="mx-auto mt-4">
@@ -24,7 +24,7 @@
             </button>
         </div>
         <ShareddeskInformation v-if="infoMenu"  class="mx-2 mt-4"/>
-        <ShareddeskBuildingPlan v-if="buildingMenu" class="mx-2 mt-4"/>
+        <ShareddeskBuildingPlan v-if="buildingMenu" class="mx-2 mt-4" :floors="floors"/>
     </div>
 </template>
 
@@ -33,7 +33,25 @@ export default {
     data() {
         return {
             infoMenu: false,
-            buildingMenu: false
+            buildingMenu: true
+        }
+    },
+    props: {
+        officeName: {
+            type: String,
+            required: true
+        },
+        officeAddress: {
+            type: String,
+            required: true
+        },
+        officeImagePath: {
+            type: String,
+            required: true
+        },
+        floors: {
+            type: Array,
+            required: true
         }
     },
     methods: {

@@ -8,17 +8,18 @@
             </div>
         </div>
         <hr class="border-gray-400" />
-        <ul class="py-2">
-            <li>
-                <a href="#" class="block px-4 py-2 text-neutral hover:bg-base-300">
+        <ul class="">
+            <nuxt-link to="/">
+            <li class="px-4 py-2 text-neutral hover:bg-primary-content">
                     Konto
-                </a>
             </li>
-            <li>
-                <a href="#" class="block px-4 py-2 text-neutral hover:bg-base-300">
-                    Abmelden
-                </a>
+            </nuxt-link>
+            <nuxt-link to="/">
+            <li class="px-4 py-2 text-neutral hover:bg-primary-content">
+                                    Abmelden
+            
             </li>
+            </nuxt-link>
         </ul>
     </div>
 </template>

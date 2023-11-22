@@ -10,21 +10,15 @@ definePageMeta({
 export default {
     data() {
         return {
-            officeImagePath: "/images/offices/singapur.jpg",
-            officeName: "Singapur",
-            officeAddress: "15 Beach Road, Singapore 189677",
+            officeImagePath: "/images/offices/aachen.jpg",
+            officeName: "Aachen 2",
+            officeAddress: "Pontstr. 121, 52062 Aachen",
             floors: [
                 {
                     floor: "EG",
                     name: "Erdgeschoss / Eingang",
                     occupiedDesks: 1,
-                    maxDesks: 5
-                },
-                {
-                    floor: "1OG",
-                    name: "Obergeschoss 1",
-                    occupiedDesks: 5,
-                    maxDesks: 12
+                    maxDesks: 16
                 }
             ]
         }
