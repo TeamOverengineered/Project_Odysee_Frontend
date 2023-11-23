@@ -1,5 +1,5 @@
 <template>
-    <div class="navbar sticky top-0 bg-base-300 shadow-sm py-4 border-b border-gray-400" id="header">
+    <div class="navbar top-0 bg-base-300 shadow-sm py-4 border-b border-gray-400" id="header">
         <div class="flex-1">
             <a href="/dashboard"><img src="/images/toelogo.png.svg" alt=""></a>
         </div>

@@ -1,5 +1,5 @@
 <template>
-    <button class="w-full border hover:bg-primary-content rounded-xl h-20 flex flex-row items-center my-1">
+    <button @click="handleEvent" class="w-full border hover:bg-primary-content rounded-xl h-20 flex flex-row items-center my-1" >
         <div class="w-12 h-12 mx-4 rounded-xl bg-base-300 flex">
             <p class="text-2xl self-center mx-auto">{{ floor }}</p>
         </div>
@@ -47,8 +47,11 @@
             if (this.maxDesks === this.occupiedDesks) {
                 this.badge = 'badge-error'
             }
-
-            console.log(this.badge)
+        },
+        methods: {
+            handleEvent() {
+                this.$emit('clickedCard', this.floor)
+            }
         }
     }
 </script>

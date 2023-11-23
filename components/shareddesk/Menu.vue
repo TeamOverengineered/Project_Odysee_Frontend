@@ -1,5 +1,5 @@
 <template>
-    <div class="h-full w-64 bg-base-200 flex flex-col">
+    <div class="w-64 bg-base-200 flex flex-col">
         <div class="mx-2">
             <ul class="items-center">
                 <nuxt-link to="/shareddesk">
@@ -24,7 +24,7 @@
             </button>
         </div>
         <ShareddeskInformation v-if="infoMenu"  class="mx-2 mt-4"/>
-        <ShareddeskBuildingPlan v-if="buildingMenu" class="mx-2 mt-4" :floors="floors"/>
+        <ShareddeskBuildingPlan @clickedCard="handleEvent" v-if="buildingMenu" class="mx-2 mt-4" :floors="floors"/>
     </div>
 </template>
 
@@ -65,6 +65,9 @@ export default {
                     this.buildingMenu = false
                     this.infoMenu = !this.infoMenu
             }
+        },
+        handleEvent(data) {
+            this.$emit('clickedCard', data)
         }
     }
 }

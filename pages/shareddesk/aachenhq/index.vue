@@ -1,5 +1,15 @@
 <template>
-    <ShareddeskMenu :officeImagePath="officeImagePath" :officeName="officeName" :officeAddress="officeAddress" :floors="floors"/>
+    <div class="flex">
+        <ShareddeskMenu @clickedCard="handleEvent" :officeImagePath="officeImagePath" :officeName="officeName"
+            :officeAddress="officeAddress" :floors="floors" />
+    </div>
+    <div class="flex">
+        <img :src="selectedFloor" class="object-contain">
+    </div>
+    <div class="flex">
+        <ShareddeskMenu @clickedCard="handleEvent" :officeImagePath="officeImagePath" :officeName="officeName"
+            :officeAddress="officeAddress" :floors="floors" />
+    </div>
 </template>
 
 <script>
@@ -32,7 +42,13 @@ export default {
                     occupiedDesks: 11,
                     maxDesks: 20
                 }
-            ]
+            ],
+            selectedFloor: '/images/offices/floors/aachenhq/eg.jpg',
+        }
+    },
+    methods: {
+        handleEvent(data) {
+            this.selectedFloor = '/images/offices/floors/aachenhq/' + data.toLowerCase() + '.jpg'
         }
     }
 }
