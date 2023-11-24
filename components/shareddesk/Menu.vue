@@ -12,7 +12,7 @@
                 </li>
             </ul>
             <p class="text-2xl">{{ officeName }}</p>
-            <p>{{ officeAddress }}</p>
+            <p class="text-gray-500">{{ officeAddress }}</p>
         </div>
         <hr class="border-base-300 mt-2">
         <div class="mx-auto mt-4">
