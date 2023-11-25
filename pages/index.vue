@@ -34,10 +34,10 @@
                     </label>
                     <input type="text" class="input input-bordered w-full rounded-sm" required/>
                 </div>
-                <button class="btn btn-active w-full mt-4 rounded-sm" type="submit">Einloggen</button>
+                <button class="btn btn-active w-full mt-4 rounded-sm hover:bg-primary-content" type="submit">Einloggen</button>
                 <div class="flex justify-between mt-2">
-                    <a href="#" class="link">Registrieren</a>
-                    <a href="#" class="link">Passwort vergessen?</a>
+                    <a href="#" class="link hover:text-primary">Registrieren</a>
+                    <a href="#" class="link hover:text-primary">Passwort vergessen?</a>
                 </div>
             </form>
         </div>

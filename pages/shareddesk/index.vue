@@ -1,6 +1,6 @@
 <template>
-    <h1 class="text-2xl mx-16 mt-16 fixed">Shared Desk</h1>
-    <div id="cards" class="grid grid-cols-3 w-full mx-auto items-center">
+    <h1 class="text-4xl mx-16 mt-16 fixed">Shared Desk</h1>
+    <div id="cards" class="grid grid-cols-3 w-full mx-28 items-center">
         <div v-for="card in cards" class="mx-auto">
             <ShareddeskCard :imagePath="card.imagePath" :alt="card.alt" :title="card.title" :description="card.description" :freeSpaces="card.freeSpaces" :url="card.url" class="mx-6"/>
         </div>

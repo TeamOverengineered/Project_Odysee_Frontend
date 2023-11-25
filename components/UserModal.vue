@@ -9,7 +9,7 @@
         </div>
         <hr class="border-gray-400" />
         <ul class="">
-            <nuxt-link to="/">
+            <nuxt-link to="/settings/account">
             <li class="px-4 py-2 text-neutral hover:bg-primary-content">
                     Konto
             </li>
