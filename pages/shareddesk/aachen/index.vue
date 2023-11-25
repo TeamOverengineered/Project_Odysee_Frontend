@@ -3,8 +3,8 @@
         <ShareddeskMenu @clickedCard="handleEvent" :officeImagePath="officeImagePath" :officeName="officeName"
             :officeAddress="officeAddress" :floors="floors" />
     </div>
-    <div class="flex">
-        <img :src="selectedFloor" class="object-contain">
+    <div class="flex items-center">
+        <img :src="selectedFloorImage" class="h-5/6 w-5/6">
     </div>
     <div class="flex">
         
@@ -30,12 +30,12 @@ export default {
                     maxDesks: 16
                 }
             ],
-            selectedFloor: '/images/offices/floors/aachen/eg.jpg',
+            selectedFloorImage: '/images/offices/floors/aachen/eg.png',
         }
     },
     methods: {
         handleEvent(data) {
-            this.selectedFloor = '/images/offices/floors/aachen/' + data.toLowerCase() + '.jpg'
+            this.selectedFloorImage = '/images/offices/floors/aachen/' + data.toLowerCase() + '.png'
         }
     }
 }

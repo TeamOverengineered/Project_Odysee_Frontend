@@ -22,6 +22,9 @@
                     </tr>
                 </tbody>
             </table>
+            <div class="flex justify-end">
+                <button class="btn rounded-md bg-base-200 border-gray-400 hover:bg-primary-content mt-8">Alle Tickets</button>
+            </div>
         </div>
         <Statistics />
     </div>

@@ -3,8 +3,8 @@
         <ShareddeskMenu @clickedCard="handleEvent" :officeImagePath="officeImagePath" :officeName="officeName"
             :officeAddress="officeAddress" :floors="floors" />
     </div>
-    <div class="flex">
-        <img :src="selectedFloorImage" class="object-contain">
+    <div class="flex items-center">
+        <img :src="selectedFloorImage" class="h-5/6 w-5/6">
     </div>
     <div class="flex">
         <ShareddeskDeskInformation :officeName="officeName" :features="deskInformation.features" :deskImagePath="deskInformation.deskImagePath" :deskNumber="deskInformation.deskNumber" :floor="selectedFloor"  />
@@ -54,13 +54,13 @@ export default {
                 'Ja schreib Simon die hässliche Fotze auch dabei'
                 ]
             },
-            selectedFloorImage: '/images/offices/floors/aachenhq/eg.jpg',
+            selectedFloorImage: '/images/offices/floors/aachenhq/eg.png',
             selectedFloor: 'EG'
         }
     },
     methods: {
         handleEvent(data) {
-            this.selectedFloorImage = '/images/offices/floors/aachenhq/' + data.toLowerCase() + '.jpg'
+            this.selectedFloorImage = '/images/offices/floors/aachenhq/' + data.toLowerCase() + '.png'
             this.selectedFloor = data
         }
     }
