@@ -31,10 +31,13 @@
 </template>
 
 <script>
+import { useUserStore } from '~/store/user';
+import { mapStores } from 'pinia';
+
 export default {
     data() {
         return {
-            loggedInUser: "John Doe",
+            loggedInUser: '',
             ticketData: [
                 { id: "1", subject: "Meld dich du Spast", email: "erzfeind@gmx.de", supporterId: "12345" },
                 { id: "2", subject: "Meld dich du Spast", email: "erzfeind@gmx.de", supporterId: "12345" },
@@ -43,6 +46,12 @@ export default {
                 { id: "4", subject: "Meld dich du Spast", email: "erzfeind@gmx.de", supporterId: "12345" },
             ]
         };
+    },
+    computed: {
+        ...mapStores(useUserStore),
+    },
+    mounted() {
+        this.loggedInUser = this.userStore.userName
     }
 };
 </script>

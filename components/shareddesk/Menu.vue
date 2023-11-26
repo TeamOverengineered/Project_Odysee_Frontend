@@ -1,5 +1,5 @@
 <template>
-    <div class="w-64 bg-base-200 flex flex-col">
+    <div class="w-72 bg-base-200 flex flex-col">
         <div class="mx-2">
             <ul class="items-center">
                 <nuxt-link to="/shareddesk">
