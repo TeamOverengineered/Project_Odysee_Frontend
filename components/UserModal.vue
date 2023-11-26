@@ -14,17 +14,18 @@
                     Konto
             </li>
             </nuxt-link>
-            <nuxt-link to="/">
-            <li class="px-4 py-2 text-neutral hover:bg-primary-content">
-                                    Abmelden
-            
+            <li class="px-4 py-2 text-neutral hover:bg-primary-content cursor-pointer" @click="logout">
+                Abmelden
             </li>
-            </nuxt-link>
+            
         </ul>
     </div>
 </template>
 
 <script>
+import { useAuthStore } from '~/store/auth';
+import { mapStores } from 'pinia';
+
 export default {
     data() {
         return {
@@ -41,6 +42,9 @@ export default {
             default: ''
         }
     },
+    computed: {
+        ...mapStores(useAuthStore),  
+    },
     mounted() {
         document.addEventListener('click', this.handleClickOutside)
     },
@@ -51,6 +55,9 @@ export default {
                     this.$emit("closeMenu");
                 }
                 this.visible = true
+        },
+        logout() {
+            this.authStore.logUserOut();
         }
     }
 };

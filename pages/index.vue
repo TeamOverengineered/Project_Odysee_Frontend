@@ -34,7 +34,7 @@
                     </label>
                     <input type="text" class="input input-bordered w-full rounded-sm" required/>
                 </div>
-                <button class="btn btn-active w-full mt-4 rounded-sm hover:bg-primary-content" type="submit">Einloggen</button>
+                <button @click.prevent="login" class="btn btn-active w-full mt-4 rounded-sm hover:bg-primary-content" type="submit">Einloggen</button>
                 <div class="flex justify-between mt-2">
                     <a href="#" class="link hover:text-primary">Registrieren</a>
                     <a href="#" class="link hover:text-primary">Passwort vergessen?</a>
@@ -45,7 +45,27 @@
 </template>
 
 <script setup>
-    definePageMeta({
-        layout: false
-    })
+import { storeToRefs } from 'pinia'; // import storeToRefs helper hook from pinia
+import { useAuthStore } from '~/store/auth'; // import the auth store we just created
+
+const { authenticate } = useAuthStore(); // use authenticateUser action from  auth store
+const { authenticated } = storeToRefs(useAuthStore()); // make authenticated state reactive with storeToRefs
+
+const user = ref({
+  username: 'kminchelle', 
+  password: '0lelplR',
+});
+const router = useRouter();
+
+const login = async () => {
+  await authenticate(user.value); // call authenticateUser and pass the user object
+  // redirect to homepage if user is authenticated
+  if (authenticated) {
+    router.push('/dashboard');
+  }
+};
+
+definePageMeta({
+  layout: false,
+})
 </script>
