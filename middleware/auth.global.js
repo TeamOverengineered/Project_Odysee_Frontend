@@ -4,8 +4,6 @@ export default defineNuxtRouteMiddleware((to) => {
   const { authenticated } = storeToRefs(useAuthStore()); // make authenticated state reactive
   const token = useCookie('token'); // get token from cookies
 
-  console.log(to)
-
   if (token.value) {
     // check if value exists
     authenticated.value = true; // update the state to authenticated
