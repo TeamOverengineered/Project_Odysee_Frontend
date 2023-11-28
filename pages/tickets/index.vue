@@ -2,7 +2,7 @@
     <div class="flex flex-grow justify-between">
         <div class="mx-16 w-full mt-16">
             <h1 class="text-4xl">Tickets</h1>
-            <nuxt-link to="/tickets/create"><button class="btn rounded-md bg-base-200 border-gray-400 hover:bg-primary-content mt-12">Neues Ticket anlegen</button></nuxt-link>
+            <nuxt-link to="/tickets/create"><button class="btn rounded-md bg-base-200  hover:bg-primary-content mt-12">Neues Ticket anlegen</button></nuxt-link>
             <table class="border-collapse w-full mt-12">
                 <thead>
                     <tr>
