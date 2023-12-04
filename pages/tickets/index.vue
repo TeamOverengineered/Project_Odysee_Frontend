@@ -7,7 +7,7 @@
 export default {
     data() {
         return {
-            isAdmin: true
+            isAdmin: false
         }
     }
 }

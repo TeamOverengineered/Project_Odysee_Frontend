@@ -3,7 +3,7 @@
         <div class="mx-16 mt-16 w-full">
             <h1 class="text-4xl">Ticket erstellen</h1>
             <div class="mt-6">
-                <div class="w-1/2 h-96 bg-base-300 rounded-xl flex flex-col flex-grow p-6">
+                <div class="w-4/6 h-96 bg-base-300 rounded-xl flex flex-col flex-grow p-6">
                     <div class="flex flex-row">
                         <p class="text-3xl w-1/4">Betreff</p>
                         <input v-model="subject" type="text" class="input text-base input-bordered focus:outline-primary-content w-5/6" placeholder="Betreff eingeben">
