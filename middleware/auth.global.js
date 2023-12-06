@@ -1,4 +1,5 @@
 import {useAuthStore} from "~/store/auth";
+import {abortNavigation} from "#app";
 
 export default defineNuxtRouteMiddleware((to) => {
   const { authenticated } = storeToRefs(useAuthStore()); // make authenticated state reactive
@@ -15,8 +16,11 @@ export default defineNuxtRouteMiddleware((to) => {
    }
 
    // if token doesn't exist redirect to log in
-   if (!token.value && to?.path !== '/') {
-     abortNavigation();
-     return navigateTo('/');
+    if (!token.value && to?.path !== '/') {
+        if (to?.path === '/register') {
+            return;
+        }
+        abortNavigation();
+        return navigateTo('/');
    }
 });
