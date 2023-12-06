@@ -67,8 +67,8 @@ export default {
       }
 
       tickets.forEach(ticket => {
-        ticket.reporter = this.findUser(ticket.creatorId)
-        ticket.assignee = this.findUser(ticket.processorId)
+        ticket.reporter = this.findUser(ticket.creatorId) ? this.findUser(ticket.creatorId) : 'Nicht zugewiesen'
+        ticket.assignee = this.findUser(ticket.processorId) ? this.findUser(ticket.processorId) : 'Nicht zugewiesen'
         switch (ticket.status) {
           case 0:
             this.openTickets.push(ticket)
@@ -87,7 +87,9 @@ export default {
     },
     findUser(id) {
       const user = this.users.find(user => user.id === id)
-      return user.username
+      if (user) {
+        return user.username
+      }
     },
     findTicketsinDate(tickets, fromDate, toDate) {
       return tickets.filter(ticket => {
