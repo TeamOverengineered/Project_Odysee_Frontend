@@ -14,7 +14,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr v-for="ticket in ticketData" :key="ticket.id">
+                    <tr v-for="ticket in ticketData" class="cursor-pointer hover:bg-primary-content" :key="ticket.id" @click="openTicket(ticket.id)">
                         <td class="border border-gray-300 px-4 py-2"><div class="flex justify-between items-center">ticket{{ ticket.id }} <div v-if="ticket.new" class="h-3 w-3 bg-pink-500 rounded-full"></div></div></td>
                         <td class="border border-gray-300 px-4 py-2">{{ ticket.subject }}</td>
                         <td class="border border-gray-300 px-4 py-2">{{ ticket.createDate }}</td>
@@ -40,6 +40,11 @@ export default {
                 { id: "250627_006", subject: "HALLOOOOOOOOOOO", createDate: "25.06.2027", state: "Geschlossen", assignee: "calvin@klein.com", new: false},
             ]
         };
+    },
+  methods: {
+    openTicket(id) {
+      this.$router.push('/tickets/' + id)
     }
+  }
 };
 </script>

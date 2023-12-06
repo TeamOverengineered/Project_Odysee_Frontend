@@ -50,7 +50,7 @@ export default {
     computed: {
         ...mapStores(useUserStore),
     },
-    mounted() {
+    created() {
         this.loggedInUser = this.userStore.userName
     }
 };

@@ -8,7 +8,8 @@ export const useUserStore = defineStore({
             userName: '',
             firstName: '',
             lastName: '',
-            email: ''
+            email: '',
+            isAdmin: false
         }
     },
     getters: {
@@ -20,12 +21,14 @@ export const useUserStore = defineStore({
             this.firstName = data.firstName
             this.lastName = data.lastName
             this.email = data.email
+            this.isAdmin = data.isAdmin
         },
         logout() {
             this.userName = ''
             this.firstName = ''
             this.lastName = ''
             this.email = ''
+            this.isAdmin = false
         }
     },
     persist: true
