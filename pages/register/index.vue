@@ -4,39 +4,39 @@
       <img class="w-48 self-center m-8" src="/images/logo.png" alt="">
       <div class="flex flex-col items-center">
         <h1 class="text-4xl font-bold">Registrieren</h1>
-        <form action="" class="w-1/2 mx-auto mt-12">
+        <div class="w-1/2 mx-auto mt-12">
           <div class="form-control w-full">
             <label class="label">
               <span class="label-text font-medium text-lg">E-Mail</span>
             </label>
-            <input type="email" class="input input-bordered w-full rounded-sm" required />
+            <input type="email" class="input input-bordered w-full rounded-sm focus:outline-primary-content" v-model="email" />
           </div>
           <div class="form-control w-full">
             <label class="label">
               <span class="label-text font-medium text-lg">Passwort</span>
             </label>
-            <input type="text" class="input input-bordered w-full rounded-sm" required/>
+            <input type="password" class="input input-bordered w-full rounded-sm focus:outline-primary-content" v-model="password"/>
           </div>
           <div class="form-control w-full">
             <label class="label">
               <span class="label-text font-medium text-lg">Username</span>
             </label>
-            <input type="text" class="input input-bordered w-full rounded-sm" required/>
+            <input type="text" class="input input-bordered w-full rounded-sm focus:outline-primary-content" v-model="username"/>
           </div>
           <div class="form-control w-full">
             <label class="label">
               <span class="label-text font-medium text-lg">Vorname</span>
             </label>
-            <input type="text" class="input input-bordered w-full rounded-sm" required/>
+            <input type="text" class="input input-bordered w-full rounded-sm focus:outline-primary-content" v-model="firstName"/>
           </div>
           <div class="form-control w-full">
             <label class="label">
               <span class="label-text font-medium text-lg">Nachname</span>
             </label>
-            <input type="text" class="input input-bordered w-full rounded-sm" required/>
+            <input type="text" class="input input-bordered w-full rounded-sm focus:outline-primary-content" v-model="lastName"/>
           </div>
-          <button @click.prevent="login" class="btn btn-active w-full mt-4 rounded-sm hover:bg-primary-content" type="submit">Registrieren</button>
-        </form>
+          <button @click="register" class="btn btn-active w-full mt-4 rounded-sm hover:bg-primary-content" :disabled="!canSubmit">Registrieren</button>
+        </div>
       </div>
     </div>
     <div class="w-1/3 bg-base-300 flex">
@@ -60,7 +60,47 @@
 </template>
 
 <script>
+import apiCalls from "~/src/apiCalls.js";
+import guidGenerator from "~/src/guidGenerator.js";
 definePageMeta({
   layout: false,
 })
+export default {
+  data() {
+    return {
+      email: '',
+      password: '',
+      username: '',
+      firstName: '',
+      lastName: '',
+    }
+  },
+  computed: {
+    canSubmit() {
+      if (this.email && this.password && this.username && this.firstName && this.lastName) {
+        return true
+      }
+    }
+  },
+  methods: {
+    register() {
+       apiCalls.postUsers({
+        id: guidGenerator.generateUuid(),
+        mail: this.email,
+        password: this.password,
+        username: this.username,
+        firstName: this.firstName,
+        lastName: this.lastName,
+        isAdmin: false
+      })
+      .then(response => {
+        if (response.data.value !== null) {
+          this.$router.push('/')
+        } else {
+          alert('Dieser Benutzername wird bereits verwendet. Bitte wählen Sie einen anderen.')
+        }
+      })
+    }
+  }
+}
 </script>

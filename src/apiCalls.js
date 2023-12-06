@@ -202,9 +202,10 @@ export default {
             }
         })
     },
-    postUsers: async () => {
+    postUsers: async (data) => {
         return useFetch(apiUrl + 'users/', {
             method: 'POST',
+            body: JSON.stringify(data),
             headers: {
                 'Content-Type': 'application/json'
             }
