@@ -5,5 +5,6 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     '@pinia-plugin-persistedstate/nuxt',
   ],
-  devtools: { enabled: false }
+  devtools: { enabled: false },
+  ssr: false
 })

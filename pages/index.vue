@@ -26,13 +26,13 @@
                     <label class="label">
                         <span class="label-text font-bold text-lg">E-Mail</span>
                     </label>
-                    <input type="email" class="input input-bordered w-full rounded-sm" required />
+                    <input type="email" class="input input-bordered w-full rounded-sm focus:outline-primary-content" required />
                 </div>
                 <div class="form-control w-full">
                     <label class="label">
                         <span class="label-text font-bold text-lg">Passwort</span>
                     </label>
-                    <input type="text" class="input input-bordered w-full rounded-sm" required/>
+                    <input type="text" class="input input-bordered w-full rounded-sm focus:outline-primary-content" required/>
                 </div>
                 <button @click.prevent="login" class="btn btn-active w-full mt-4 rounded-sm hover:bg-primary-content" type="submit">Einloggen</button>
                 <div class="flex justify-between mt-2">

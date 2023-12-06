@@ -18,7 +18,6 @@ export default {
   },
   created() {
     this.isAdmin = this.userStore.isAdmin
-  },
-
+  }
 }
 </script>

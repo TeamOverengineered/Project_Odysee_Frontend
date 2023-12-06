@@ -33,38 +33,7 @@ export default {
   data() {
     return {
       comment: '',
-      comments: [
-        {
-          user: 'Patrick Gugelsberger',
-          text: 'Was zum Fick machst du da?',
-          sent: '12:45',
-        },
-        {
-          user: 'Justin Koerner',
-          text: 'Wie was mach ich? Ich fixe den scheiß den Simon hier veranstaltet hat! Dieser blöde Hurensohn',
-          sent: '12:47',
-        },
-        {
-          user: 'Simon Stachowiak',
-          text: 'Ich hab gar nichts gemacht du Bastard, das war Gerd der Wixxer!',
-          sent: '12:48',
-        },
-        {
-          user: 'Patrick Gugelsberger',
-          text: 'Was zum Fick machst du da?',
-          sent: '12:45',
-        },
-        {
-          user: 'Justin Koerner',
-          text: 'Wie was mach ich? Ich fixe den scheiß den Simon hier veranstaltet hat! Dieser blöde Hurensohn',
-          sent: '12:47',
-        },
-        {
-          user: 'Simon Stachowiak',
-          text: 'Ich hab gar nichts gemacht du Bastard, das war Gerd der Wixxer!',
-          sent: '12:48',
-        },
-      ],
+      comments: {}
     }
   },
   methods: {
@@ -76,6 +45,9 @@ export default {
             sent: new Date().toLocaleTimeString().slice(0, 5),
           }
       )
+    },
+    async getComments() {
+
     }
   },
   computed: {
