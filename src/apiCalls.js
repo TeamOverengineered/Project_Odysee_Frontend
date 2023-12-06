@@ -168,9 +168,10 @@ export default {
             }
         })
     },
-    postTickets: async () => {
+    postTickets: async (data) => {
         return useFetch(apiUrl + 'tickets/', {
             method: 'POST',
+            body: JSON.stringify(data),
             headers: {
                 'Content-Type': 'application/json'
             }
