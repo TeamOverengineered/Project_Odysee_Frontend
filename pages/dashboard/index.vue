@@ -2,7 +2,7 @@
   <div class="flex flex-grow justify-between">
     <div class="mx-16 w-full mt-16">
       <h1 class="text-4xl">Willkommen, {{ loggedInUser }}</h1>
-      <button class="btn rounded-md bg-base-200 hover:bg-primary-content mt-12">Platz buchen</button>
+      <nuxt-link to="/shareddesk"><button class="btn rounded-md bg-base-200 hover:bg-primary-content mt-12">Platz buchen</button></nuxt-link>
       <h2 class="text-2xl mt-12">Offene Tickets</h2>
       <div class="overflow-y-auto h-96">
         <table class="border-collapse w-full overflow-auto">
@@ -22,11 +22,7 @@
           </tbody>
         </table>
       </div>
-      <div class="flex justify-end">
-        <button class="btn rounded-md bg-base-200 hover:bg-primary-content mt-8">Alle Tickets</button>
-      </div>
     </div>
-    <Statistics/>
   </div>
 </template>
 

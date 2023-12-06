@@ -5,8 +5,6 @@
         </div>
         <div class="flex-none">
             <div class="menu menu-horizontal px-1">
-                <RoundButton :class="isNotificationMenuOpen ? 'bg-primary-content' : '' " :image="'bell.png'" :notifications="3" class="mx-1" id="notification" @click="toggleMenu('isNotificationMenuOpen')"/>
-                <NotificationsModal @closeMenu="toggleMenu('isNotificationMenuOpen')" v-if="isNotificationMenuOpen" :notifications="3" />
                 <RoundButton :class="isUserMenuOpen ? 'bg-primary-content' : '' " :image="'user.png'" class="mx-1" id="profile" @click="toggleMenu('isUserMenuOpen')"/>
                 <UserModal @closeMenu="toggleMenu('isUserMenuOpen')" v-if="isUserMenuOpen" :userName="userName" :userEmail="userEmail" />
             </div>
