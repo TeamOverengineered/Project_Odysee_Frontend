@@ -252,9 +252,10 @@ export default {
             }
         })
     },
-    putWorkSpaces: async (id = '') => {
+    putWorkSpaces: async (id = '', data) => {
         return useFetch(apiUrl + 'workspaces/' + id, {
             method: 'PUT',
+            body: JSON.stringify(data),
             headers: {
                 'Content-Type': 'application/json'
             }

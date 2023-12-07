@@ -1,13 +1,10 @@
 <template>
-    <div>
-        <p>
-            Hier diverse Informationen einfügen, vielleicht als Fließtext, aber ich habe keine Ahnung was hier hin soll.
+  <div>
+    <p>
+      Verdammt schönes Büro und eine verdammt schöne Ausstattung. Man kann hier wirklich nichts bemängeln, selbst wenn
+      man es will.
 
-            Hier diverse Informationen einfügen, vielleicht als Fließtext, aber ich habe keine Ahnung was hier hin soll.
-
-            Hier diverse Informationen einfügen, vielleicht als Fließtext, aber ich habe keine Ahnung was hier hin soll.
-
-            Hier diverse Informationen einfügen, vielleicht als Fließtext, aber ich habe keine Ahnung was hier hin soll.
-        </p>
-    </div>
+      Wer sich hier nicht wohl fühlt wird es wohl nirgendwo tun.
+    </p>
+  </div>
 </template>
