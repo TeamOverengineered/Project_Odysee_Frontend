@@ -3,15 +3,7 @@
     <div>
       <h1 class="text-4xl">Accounteinstellungen</h1>
     </div>
-    <div class="flex flex-row mt-6">
-      <div class="flex flex-col">
-        <div class="w-64 h-64 flex justify-center items-center">
-          <img src="/images/users/circleMask.png" alt="profileImage" class="absolute w-64 h-64 opacity-50">
-          <img :src="profileImage" alt="profileImage" class="w-64 h-64">
-        </div>
-      </div>
-      <div>
-        <div class="form-control h-full justify-around ml-4 w-80">
+    <div class="mt-6">
           <label class="label pt-0">
             <span class="label-text text-base">Username</span>
           </label>
@@ -24,11 +16,6 @@
             <span class="label-text text-base">Nachname</span>
           </label>
           <input v-model="lastName" type="text" class="input h-10 input-bordered w-full rounded-sm"/>
-        </div>
-      </div>
-    </div>
-    <div class="flex w-64 justify-center">
-      <a href="" class="link hover:text-primary text-center">Bild ändern</a>
     </div>
     <div>
       <label class="label">
@@ -55,7 +42,6 @@ import {mapStores} from 'pinia'
 export default {
   data() {
     return {
-      profileImage: '/images/users/gerd/profil.jpg',
       userName: '',
       firstName: '',
       lastName: '',
