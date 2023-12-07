@@ -15,7 +15,7 @@ export default {
   data() {
     return {
       floors: [],
-      buildings: [],
+      workspaces: [],
       cards: {
         hqaachen: {
           id: "6d51585b-bffe-4790-a928-5d6f10f6236a",
@@ -49,18 +49,21 @@ export default {
   },
   methods: {
     countFreeSpaces(buildingId) {
-      const floors = this.floors
-      let freeSpaces = 0
-      for (const floor of floors) {
-        if (floor.buildingID === buildingId) {
-          freeSpaces += floor.spacesFree
+      let freeSpaces = 0;
+      for (const workspace of this.workspaces) {
+        for (const floor of this.floors) {
+          if (workspace.floorId === floor.id && floor.buildingID === buildingId) {
+            if (workspace.status == 0) {
+              freeSpaces++;
+            }
+          }
         }
       }
       return freeSpaces
     },
   },
   async mounted() {
-    this.buildings = (await apiCalls.getBuildings()).data.value;
+    this.workspaces = (await apiCalls.getWorkSpaces()).data.value
     this.floors = (await apiCalls.getFloors()).data.value;
     this.cards.hqaachen.freeSpaces = this.countFreeSpaces(this.cards.hqaachen.id);
     this.cards.singapur.freeSpaces = this.countFreeSpaces(this.cards.singapur.id);
