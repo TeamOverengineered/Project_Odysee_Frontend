@@ -1,10 +1,9 @@
 <template>
     <div class="absolute right-0 top-20 mt-2 w-80 bg-base-200 border border-gray-400 rounded shadow-lg">
-        <div class="flex items-center p-4">
-            <img src="/images/logo.png" class="w-12 h-12 rounded-full" alt="Profile Image" />
-            <div class="ml-4">
-                <p class="text-lg font-semibold">{{ userName }}</p>
-                <p class="text-gray-500">{{ userEmail }}</p>
+        <div class="flex items-start p-4">
+            <div class="">
+                <p class="text-lg font-semibold">{{ this.userStore.userName }}</p>
+                <p class="text-gray-500">{{ this.userStore.email }}</p>
             </div>
         </div>
         <hr class="border-gray-400" />
@@ -25,6 +24,7 @@
 <script>
 import { useAuthStore } from '~/store/auth';
 import { mapStores } from 'pinia';
+import {useUserStore} from "~/store/user.js";
 
 export default {
     data() {
@@ -43,7 +43,7 @@ export default {
         }
     },
     computed: {
-        ...mapStores(useAuthStore),  
+        ...mapStores(useAuthStore, useUserStore),
     },
     mounted() {
         document.addEventListener('click', this.handleClickOutside)

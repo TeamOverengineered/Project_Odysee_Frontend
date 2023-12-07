@@ -6,12 +6,6 @@
         <div class="w-full bg-base-100 mt-2 px-4 h-full rounded-xl overflow-auto">
           <div v-for="comment in comments" class=chat
                :class="this.userStore.userId === comment.userId ? 'chat-end' : 'chat-start'">
-            <div class="chat-image avatar">
-              <div class="w-10 rounded-full">
-                <img alt="Tailwind CSS chat bubble component"
-                     :src="'/images/users/' + this.userStore.userId + '/profil.jpg' "/>
-              </div>
-            </div>
             <div class="chat-header">
               {{ findUserById(comment.userId) }}
               <span class="text-xs opacity-50">{{ new Date(comment.createdAt).toLocaleString() }}</span>

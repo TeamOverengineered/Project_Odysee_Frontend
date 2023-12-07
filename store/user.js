@@ -4,11 +4,11 @@ export const useUserStore = defineStore({
     id: 'user',
     state: () => {
         return {
-            userId: 0,
-            userName: '',
-            firstName: '',
-            lastName: '',
-            email: '',
+            userId: '3fa85f64-5717-4562-b3fc-2c963f66afa6',
+            userName: 'Patrick Gugelsberger',
+            firstName: 'Patrick',
+            lastName: 'Gugelsberger',
+            email: 'pgugelsberger@gmail.com',
             isAdmin: false
         }
     },

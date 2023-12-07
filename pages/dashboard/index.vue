@@ -14,7 +14,7 @@
           </tr>
           </thead>
           <tbody>
-          <tr v-for="ticket in ticketData" :key="ticket.id">
+          <tr v-for="ticket in ticketData" :key="ticket.id" @click="openTicket(ticket.id)" class="hover:bg-primary-content cursor-pointer">
             <td class="border border-gray-300 px-4 py-2">{{ ticket.id }}</td>
             <td class="border border-gray-300 px-4 py-2">{{ ticket.title }}</td>
             <td class="border border-gray-300 px-4 py-2">{{ findUser(ticket.processorId) ? findUser(ticket.processorId) : 'Nicht zugewiesen' }}</td>
@@ -48,6 +48,9 @@ export default {
         if (user) {
           return user.username
         }
+      },
+      openTicket(id) {
+        this.$router.push('/tickets/' + id)
       }
     },
     async created() {
