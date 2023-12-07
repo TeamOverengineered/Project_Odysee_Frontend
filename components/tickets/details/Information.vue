@@ -61,9 +61,6 @@ export default {
       this.ticket.id = this.$route.params.ticketId
       apiCalls.putTickets(this.ticket.id, this.ticket)
     },
-    foo() {
-      console.log(this.ticket)
-    },
     async getUsers() {
       this.users = (await apiCalls.getUsers()).data.value
     },

@@ -136,9 +136,18 @@ export default {
             }
         })
     },
-    postMessages: async () => {
+    getMessagesByTicketId: async (id) => {
+        return useFetch(apiUrl + 'messages/ByTicket/' + id, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+    },
+    postMessages: async (data) => {
         return useFetch(apiUrl + 'messages/', {
             method: 'POST',
+            body: JSON.stringify(data),
             headers: {
                 'Content-Type': 'application/json'
             }
